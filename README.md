@@ -25,3 +25,11 @@ To run individual feature file
 To run by tag
 
       mvn clean test -Dcucumber.filter.tags="@TagName"
+
+
+### Git Commands
+      git init
+      git add .
+      git commit -m "first commit"
+      git push -u origin main
+      git diff README.md
