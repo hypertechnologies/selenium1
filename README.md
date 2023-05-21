@@ -33,3 +33,7 @@ To run by tag
       git commit -m "first commit"
       git push -u origin main
       git diff README.md
+
+To get update from github to your local machine 
+      
+      git pull 
