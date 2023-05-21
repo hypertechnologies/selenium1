@@ -29,6 +29,8 @@ jobs:
         cache: maven
 
     - uses: browser-actions/setup-chrome@latest
+      with:
+        chrome-version: "113.0"
     - run: chrome --version
 #    - uses: browser-actions/setup-edge@latest
 #    - uses: browser-actions/setup-firefox@latest
