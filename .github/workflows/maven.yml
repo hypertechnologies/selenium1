@@ -29,8 +29,9 @@ jobs:
         cache: maven
 
     - uses: browser-actions/setup-chrome@latest
+    - run: chrome --version
 #    - uses: browser-actions/setup-edge@latest
 #    - uses: browser-actions/setup-firefox@latest
 
     - name: Run test
-      run: mvn clean test
+      run: mvn -B clean test
