@@ -37,3 +37,15 @@ To run by tag
 To get update from github to your local machine 
       
       git pull 
+
+Check existing branches
+
+      git branch
+
+Create a new branch
+
+      git checkout -b BRANCH_NAME
+
+Switch branches
+
+      git checkout BRANCH_NAME
