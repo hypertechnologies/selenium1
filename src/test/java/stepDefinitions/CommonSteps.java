@@ -6,13 +6,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class CommonSteps extends Base{
 
     @Given("I navigate to {string}")
     public void navigate(String url){
-        WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
-        driver = new ChromeDriver();
+        // WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
+        driver = new HtmlUnitDriver();
         driver.get(url);
     }
 
