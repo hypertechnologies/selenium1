@@ -30,7 +30,7 @@ public class CommonSteps extends Base{
         capabilities.setVersion("latest"); // Specify the desired browser version
 
         // Set the URL of the Selenium Grid hub
-        String hubUrl = "http://selenium:4444/wd/hub";
+        String hubUrl = "http://localhost:4444/wd/hub";
 
         // Create a remote WebDriver instance
         try {
