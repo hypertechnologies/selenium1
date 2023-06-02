@@ -20,26 +20,7 @@ public class CommonSteps extends Base{
     public void navigate(String url){
          WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
 //        driver = new HtmlUnitDriver();
-
-
-        // Set the desired capabilities
-//        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setPlatform(org.openqa.selenium.Platform.WINDOWS); // Specify the desired platform
-        capabilities.setBrowserName("chrome"); // Specify the desired browser
-        capabilities.setVersion("latest"); // Specify the desired browser version
-
-        // Set the URL of the Selenium Grid hub
-        String hubUrl = "http://localhost:4444/wd/hub";
-
-        // Create a remote WebDriver instance
-        try {
-            driver = new RemoteWebDriver(new URL(hubUrl), capabilities);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
         driver.get(url);
     }
