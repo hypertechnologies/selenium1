@@ -27,12 +27,12 @@ jobs:
         options: --shm-size="2g"
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+
     - name: Get IP Address
-      run: echo "##[set-output name=ip;]$(ifconfig eth0 | grep 'inet [0-9\.]* ' -o | sed 's/[^0-9\.]//g')"
+      run: ifconfig eth0 | grep 'inet [0-9\.]* ' -o | sed 's/[^0-9\.]//g'"
       id: ip_addr
 
-    - uses: actions/checkout@v3
     - name: Set up JDK 11
       uses: actions/setup-java@v3
       with:
@@ -40,4 +40,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn clean test -Dcucumber.options=src/test/resources/features/guru99.feature
+      run: mvn test -Dcucumber.options='src/test/resources/features/guru99.feature'
