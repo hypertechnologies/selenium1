@@ -8,12 +8,15 @@ import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
+import java.time.Duration;
+
 public class CommonSteps extends Base{
 
     @Given("I navigate to {string}")
     public void navigate(String url){
         // WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
         driver = new HtmlUnitDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
         driver.get(url);
     }
 
